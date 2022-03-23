@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import CreateUser from "./components/CreateUser";
+import Exercises from "./components/Exercises";
+import ExerciseForm from "./components/ExerciseForm";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Exercises />} />
+          <Route
+            path="/edit/:id"
+            element={<ExerciseForm title="Edit Exercise" />}
+          />
+          <Route
+            path="/create"
+            element={<ExerciseForm title="Create Exercise" />}
+          />
+          <Route path="/user" element={<CreateUser />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
