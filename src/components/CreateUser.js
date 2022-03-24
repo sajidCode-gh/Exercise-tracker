@@ -26,10 +26,7 @@ function CreateUser() {
       .then((res) => console.log(res.json()))
       .catch((err) => console.log("Error on client side: " + err));
 
-    // axios
-    //   .post("http://localhost:5000/users/add", user)
-    //   .then((res) => console.log(res.data))
-    //   .catch((err) => console.log(err));
+    window.location = "/create";
   };
 
   return (

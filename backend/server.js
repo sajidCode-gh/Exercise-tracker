@@ -17,10 +17,10 @@ connection.once("open", () => {
   console.log("MongoDB connction established");
 });
 
-// const exercisesRouter = require("./routes/exercises");
+const exercisesRouter = require("./routes/exercises");
 const usersRouter = require("./routes/users");
 
-// app.use("/exercises", exercisesRouter);
+app.use("/exercises", exercisesRouter);
 app.use("/users", usersRouter);
 
 app.listen(port, "localhost", () => {
